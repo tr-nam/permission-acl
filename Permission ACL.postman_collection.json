@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "37d6d285-ef72-4431-a802-4625aea600c9",
+		"name": "Permission ACL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44150805",
+		"_collection_link": "https://blue-eclipse-767679.postman.co/workspace/permission-acl~b48e6101-de60-4ac8-b1b6-a834d982e774/collection/44150805-37d6d285-ef72-4431-a802-4625aea600c9?action=share&source=collection_link&creator=44150805"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-users/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-users/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-users/?id=5&populate[app_groups][populate]=app_permissions",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								},
+								{
+									"key": "populate[app_groups][populate]",
+									"value": "app_permissions"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "C",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "C",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"name\": \"Admin\",\r\n        \"description\": \"Quản trị viên, nhóm người dùng có quyền quản lý toàn bộ hệ thống.\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/app-groups",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-groups",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-groups/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-groups",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-groups/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-groups",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "C",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"name\": \"volunteer-dashboard:view\",\r\n        \"description\": \"Quyền xóa tình nguyện.\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/app-permissions",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-permissions",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-permissions/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-permissions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-permissions/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-permissions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-permissions/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-permissions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
