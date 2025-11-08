@@ -15,7 +15,7 @@ RUN npm install --frozen-lockfile
 COPY . .
 
 # Build Strapi cho production
-RUN npm build
+RUN npm run build
 
 # Đặt biến môi trường cho production
 ENV NODE_ENV=production
