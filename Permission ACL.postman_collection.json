@@ -11,6 +11,33 @@
 			"name": "User",
 			"item": [
 				{
+					"name": "C",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\":{\r\n        \"username\": \"\",\r\n        \"password\": \"\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/app-users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "R",
 					"request": {
 						"method": "GET",
@@ -34,20 +61,14 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/api/app-users/:id",
+							"raw": "{{domain}}/api/app-users/5",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"app-users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
+								"5"
 							]
 						}
 					},
@@ -102,24 +123,6 @@
 									"key": "populate[app_groups][populate]",
 									"value": "app_permissions"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "C",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/api/app-users",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"api",
-								"app-users"
 							]
 						}
 					},
@@ -204,6 +207,31 @@
 					"name": "D",
 					"request": {
 						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/app-groups/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-groups",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1",
+					"request": {
+						"method": "GET",
 						"header": [],
 						"url": {
 							"raw": "{{domain}}/api/app-groups/:id",
@@ -345,6 +373,39 @@
 									"key": "id",
 									"value": ""
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identifier\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/app-auth/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"app-auth",
+								"login"
 							]
 						}
 					},
